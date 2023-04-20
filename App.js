@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import Footer from "./Footer";
 
 const Header = () => {
   return (
@@ -52,11 +53,9 @@ const Body = () => {
     <div>
       <div className="search-item">
         <input placeholder="Search here...."></input>
-        <btn> Search</btn>
+        <btn className="search-btn"> Search</btn>
       </div>
       <div className="restaurantcard-main">
-        <RestaurantCard />
-        <RestaurantCard />
         <RestaurantCard />
         <RestaurantCard />
         <RestaurantCard />
@@ -88,8 +87,9 @@ const RootApp = () => {
     <div className="Main">
       <div className="Header">
         <Header />
-        <Body />
       </div>
+      <Body />
+      <Footer />
     </div>
   );
 };
