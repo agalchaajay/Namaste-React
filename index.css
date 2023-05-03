@@ -48,7 +48,6 @@
 .restaurantcard-main {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
 }
 
 .search-btn {

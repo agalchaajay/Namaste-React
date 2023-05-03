@@ -23,7 +23,10 @@ const Header = () => {
   );
 };
 
-const RestaurantCard = () => {
+const RestaurantCard = (props) => {
+  console.log(props);
+  const resData = props.resData;
+  console.log(resData.resName);
   return (
     <div className="restaurant-card">
       <div className="card-container">
@@ -32,51 +35,156 @@ const RestaurantCard = () => {
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2LZTRb_-b5ixB1fLsXggzz9Pw-8HfWbZcHST58stAdQ&usqp=CAU&ec=48600113"
         ></img>
         <div className="card-content">
-          <h2> Restaurant Name</h2>
-          <h5> North Indian, Biryani,....</h5>
+          <h2>{resData.resName}</h2>
+          <h5>{resData.cuisines}</h5>
           <h4>
-            4.4
+            {resData.rating}
             <img
               className="rating-image"
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKX2acAb9D9lgQw0_CX05PONEAIqIKRxlRF3la9ULcSQ&usqp=CAU&ec=48600113"
             ></img>
           </h4>
-          <h4>35 min</h4>
+          <h4>{resData.time}</h4>
         </div>
       </div>
     </div>
   );
 };
 
+const resList = [
+  {
+    resName: "Meghana Foods",
+    cuisines: "North Indian, Biryani,....",
+    rating: 4.4,
+    time: 35,
+  },
+  {
+    resName: "KFC",
+    cuisines: "Burger, Biryani,....",
+    rating: 4.3,
+    time: 30,
+  },
+  {
+    resName: "Punjabi Foods",
+    cuisines: "North Indian, Home Food....",
+    rating: 4.2,
+    time: 25,
+  },
+  {
+    resName: "Roti wala",
+    cuisines: "North Thali, Home Food,....",
+    rating: 4.1,
+    time: 38,
+  },
+  {
+    resName: "Biryani Foods",
+    cuisines: "Biryani,....",
+    rating: 3.4,
+    time: 50,
+  },
+  {
+    resName: "Meghana Foods",
+    cuisines: "North Indian, Biryani,....",
+    rating: 4.4,
+    time: 35,
+  },
+  {
+    resName: "KFC",
+    cuisines: "Burger, Biryani,....",
+    rating: 4.3,
+    time: 30,
+  },
+  {
+    resName: "Punjabi Foods",
+    cuisines: "North Indian, Home Food....",
+    rating: 4.2,
+    time: 25,
+  },
+  {
+    resName: "Roti wala",
+    cuisines: "North Thali, Home Food,....",
+    rating: 4.1,
+    time: 38,
+  },
+  {
+    resName: "Biryani Foods",
+    cuisines: "Biryani,....",
+    rating: 3.4,
+    time: 50,
+  },
+  {
+    resName: "Meghana Foods",
+    cuisines: "North Indian, Biryani,....",
+    rating: 4.4,
+    time: 35,
+  },
+  {
+    resName: "KFC",
+    cuisines: "Burger, Biryani,....",
+    rating: 4.3,
+    time: 30,
+  },
+  {
+    resName: "Punjabi Foods",
+    cuisines: "North Indian, Home Food....",
+    rating: 4.2,
+    time: 25,
+  },
+  {
+    resName: "Roti wala",
+    cuisines: "North Thali, Home Food,....",
+    rating: 4.1,
+    time: 38,
+  },
+  {
+    resName: "Biryani Foods",
+    cuisines: "Biryani,....",
+    rating: 3.4,
+    time: 50,
+  },
+  {
+    resName: "Meghana Foods",
+    cuisines: "North Indian, Biryani,....",
+    rating: 4.4,
+    time: 35,
+  },
+  {
+    resName: "KFC",
+    cuisines: "Burger, Biryani,....",
+    rating: 4.3,
+    time: 30,
+  },
+  {
+    resName: "Punjabi Foods",
+    cuisines: "North Indian, Home Food....",
+    rating: 4.2,
+    time: 25,
+  },
+  {
+    resName: "Roti wala",
+    cuisines: "North Thali, Home Food,....",
+    rating: 4.1,
+    time: 38,
+  },
+  {
+    resName: "Biryani Foods",
+    cuisines: "Biryani,....",
+    rating: 3.4,
+    time: 50,
+  },
+];
 const Body = () => {
   return (
     <div>
       <div className="search-item">
         <input placeholder="Search here...."></input>
-        <btn className="search-btn"> Search</btn>
+        <button className="search-btn"> Search</button>
       </div>
       <div className="restaurantcard-main">
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
+        <RestaurantCard resData={resList[0]} />
+        {resList.map((restaurant, index) => (
+          <RestaurantCard key={index} resData={restaurant} />
+        ))}
       </div>
     </div>
   );
