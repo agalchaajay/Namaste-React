@@ -7,15 +7,23 @@ const RestaurantCard = (props) => {
   return (
     <div className="restaurant-card">
       <div className="card-container">
-        <img className="restaurant-img" src={CARD_IMAGE_URL}></img>
+        <img
+          className="restaurant-img"
+          src={CARD_IMAGE_URL + resData.cloudinaryImageId}
+        ></img>
         <div className="card-content">
-          <h2>{resData.resName}</h2>
-          <h5>{resData.cuisines}</h5>
-          <h4>
-            {resData.rating}
-            <img className="rating-image" src={RATING_IMAGE_URL}></img>
-          </h4>
-          <h4>{resData.time} mins</h4>
+          <h2>{resData.name}</h2>
+          <h5>{resData.cuisines.join(", ")}</h5>
+          <div className="data-container">
+            <div className="rating-container">
+              <h4>
+                <img className="rating-image" src={RATING_IMAGE_URL}></img>
+                {resData.avgRating}
+              </h4>
+            </div>
+            <h4>{resData.deliveryTime} min</h4>
+            <h4>{resData.costForTwoString}</h4>
+          </div>
         </div>
       </div>
     </div>

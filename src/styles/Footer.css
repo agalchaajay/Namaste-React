@@ -26,40 +26,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.item3 {
-  font-size: 20px;
-  background: #292a30;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.item3:hover {
-  background-color: #000000;
-  transition: 0.4s;
-}
-.item4 {
-  font-size: 20px;
-  background: #25252b;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.item4:hover {
-  background-color: #4267b2;
-  transition: 0.4s;
-}
-.item5 {
-  font-size: 20px;
-  background: #202025;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.item5:hover {
-  background-color: #da0e0e;
-  transition: 0.4s;
+  width: max-content;
 }
 
 .footer-container {
@@ -82,11 +49,6 @@ a {
   .item2 {
     font-size: 7px;
   }
-  .item3,
-  .item4,
-  .item5 {
-    font-size: 12px;
-  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -97,11 +59,6 @@ a {
   }
   .item2 {
     font-size: 9px;
-  }
-  .item3,
-  .item4,
-  .item5 {
-    font-size: 14px;
   }
 }
 
@@ -114,11 +71,6 @@ a {
   .item2 {
     font-size: 11px;
   }
-  .item3,
-  .item4,
-  .item5 {
-    font-size: 16px;
-  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -130,11 +82,6 @@ a {
   .item2 {
     font-size: 13px;
   }
-  .item3,
-  .item4,
-  .item5 {
-    font-size: 18px;
-  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -145,10 +92,5 @@ a {
   }
   .item2 {
     font-size: 15px;
-  }
-  .item3,
-  .item4,
-  .item5 {
-    font-size: 20px;
   }
 }

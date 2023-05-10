@@ -12,6 +12,7 @@
 .Nav-item > ul {
   padding-top: 10px;
   display: flex;
+  margin-right: 20px;
 }
 
 .Nav-item > ul > li {
@@ -22,8 +23,8 @@
 
 .restaurant-card {
   border: 1px solid black;
-  width: 200px;
-  height: 300px;
+  width: 285px;
+  height: 375px;
   background-color: #f0f0f0;
   margin: 6px;
 }
@@ -39,6 +40,7 @@
 .rating-image {
   width: 20px;
   height: 15px;
+  margin-bottom: -1px;
 }
 
 .search-item {
@@ -48,11 +50,33 @@
 .restaurantcard-main {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 
 .search-btn {
   border: 1px solid black;
   background-color: rgb(156, 156, 160);
-  padding: 0px 5px 3px 0px;
+  padding: 3px 5px 3px 3px;
   margin: 10px;
+}
+
+.input-search {
+  height: 18px;
+}
+
+.filter-btn {
+  margin: 10px;
+  cursor: pointer;
+}
+
+.data-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+
+@media only screen and (max-width: 700px) {
+  .Nav-item {
+    display: none;
+  }
 }
