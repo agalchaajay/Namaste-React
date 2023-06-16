@@ -1,4 +1,3 @@
-import resList from "../utils/CardData";
 import RestaurantCard from "./RestaurantCard";
 import { searchCard } from "../../App";
 import { useEffect, useState } from "react";
@@ -22,14 +21,15 @@ const Body = () => {
 
     console.log(jsonData);
 
-    const apiData = jsonData.data.cards[2].data.data.cards;
+    const apiData = jsonData?.data?.cards[2]?.data?.data?.cards;
 
     setlistOfRestaurant(apiData);
   };
 
-  if (listOfRestaurant.length == 0) {
+  if (listOfRestaurant.length === 0) {
     return <Shimmer />;
   }
+
   return (
     <div>
       <div className="search-item">
@@ -43,9 +43,13 @@ const Body = () => {
           className="filter-btn"
           onClick={() => {
             // filter the data
-            const data = filterData(searchText, resList);
-            // update the state of restaurants list
-            setlistOfRestaurant(data);
+            const data = filterData(searchText, listOfRestaurant);
+
+            if (data.length == 0) {
+            } else {
+              // update the state of restaurants list
+              setlistOfRestaurant(data);
+            }
           }}
         >
           Search
@@ -62,8 +66,7 @@ const Body = () => {
         <button
           className="filter-btn"
           onClick={() => {
-            filteredData = resList;
-            setlistOfRestaurant(filteredData);
+            fetchData();
             setSearchText("");
           }}
         >
