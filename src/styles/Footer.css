@@ -40,6 +40,10 @@ a {
   grid-template-columns: 3fr 6fr 1fr 1fr 1fr;
 }
 
+footer {
+  margin-bottom: 0;
+  position: relative;
+}
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .item1 {

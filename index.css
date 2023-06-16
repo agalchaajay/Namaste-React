@@ -24,7 +24,7 @@
 .restaurant-card {
   border: 1px solid black;
   width: 285px;
-  height: 375px;
+  height: 385px;
   background-color: #f0f0f0;
   margin: 6px;
 }
@@ -51,6 +51,7 @@
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 10px;
+  min-height: 450px;
 }
 
 .search-btn {
@@ -75,6 +76,17 @@
   padding: 0 5px;
 }
 
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shimmer-card {
+  width: 285px;
+  height: 385px;
+  background-color: #f0f0f0;
+  margin: 6px;
+}
 @media only screen and (max-width: 700px) {
   .Nav-item {
     display: none;

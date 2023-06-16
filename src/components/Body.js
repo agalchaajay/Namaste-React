@@ -1,11 +1,35 @@
 import resList from "../utils/CardData";
 import RestaurantCard from "./RestaurantCard";
 import { searchCard } from "../../App";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
-  const [listOfRestaurant, setlistOfRestaurant] = useState(resList);
+  const [listOfRestaurant, setlistOfRestaurant] = useState([]);
+
+  useEffect(() => {
+    console.log("useEffect called");
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9783692&lng=77.6408356&page_type=DESKTOP_WEB_LISTING"
+    );
+
+    const jsonData = await data.json();
+
+    console.log(jsonData);
+
+    const apiData = jsonData.data.cards[2].data.data.cards;
+
+    setlistOfRestaurant(apiData);
+  };
+
+  if (listOfRestaurant.length == 0) {
+    return <Shimmer />;
+  }
   return (
     <div>
       <div className="search-item">
