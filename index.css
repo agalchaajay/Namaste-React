@@ -127,6 +127,10 @@
   font-size: 20px;
 }
 
+.contact-container {
+  min-height: 475px;
+}
+
 @media only screen and (max-width: 700px) {
   .Nav-item {
     display: none;

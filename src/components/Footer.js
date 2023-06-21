@@ -9,7 +9,7 @@ const Footer = () => {
           <span style={{ paddingRight: 5 }}>Copyright </span>
 
           <span style={{ paddingLeft: 5 }}>
-            {new Date().getFullYear()} YourCompany. All Rights Reserved.
+            {new Date().getFullYear()} AA. All Rights Reserved.
           </span>
         </div>
       </div>
