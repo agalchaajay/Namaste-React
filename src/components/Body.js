@@ -2,7 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import { searchCard } from "../../App";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
-
+import { Link } from "react-router-dom";
 const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [listOfRestaurant, setlistOfRestaurant] = useState([]);
@@ -79,9 +79,22 @@ const Body = () => {
         </button>
       </div>
       <div className="restaurantcard-main">
-        {filterListOfRestaurant.map((restaurant, index) => (
-          <RestaurantCard key={index} resData={restaurant.data} />
-        ))}
+        {/* {filterListOfRestaurant.map((restaurant, index) => (
+          <Link to={"/restaurant/" + restaurant.data.id} key={index}>
+            <RestaurantCard resData={restaurant.data} />
+          </Link>
+        ))} */}
+        {filterListOfRestaurant?.map((restaurant) => {
+          console.log("aaaA" + restaurant);
+          return (
+            <Link
+              to={"/restaurant/" + restaurant.data.id}
+              key={restaurant?.data?.id}
+            >
+              <RestaurantCard resData={restaurant.data} />
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

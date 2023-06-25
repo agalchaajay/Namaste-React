@@ -12,7 +12,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 const RootApp = () => {
   return (
     <div className="Main">
-      <div className="Header">
+      <div className="header">
         <Header />
       </div>
       <Outlet />

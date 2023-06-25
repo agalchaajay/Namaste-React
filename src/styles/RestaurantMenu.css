@@ -1,0 +1,82 @@
+.res-name-rating {
+  display: flex;
+}
+
+.text-info {
+  display: inline-block;
+  margin-right: 16px;
+  margin-left: 15px;
+  width: calc(100% - 120px);
+}
+
+.rating {
+  margin-top: 45px;
+  margin-right: 20px;
+  border: 1px solid #ccc7c7;
+  height: 85px;
+  width: 100px;
+  text-align: center;
+  border-radius: 10%;
+}
+
+.rating-head {
+  display: flex;
+}
+
+.rating-head p {
+  margin: 0px;
+  padding-top: 16px;
+}
+
+.time-cost-section {
+  display: flex;
+  margin-left: 15px;
+}
+
+.time-cost-section p {
+  margin-right: 15px;
+  font-weight: 600;
+}
+
+.dotted-line {
+  border: none;
+  border-top: 1px dotted rgb(124, 119, 119);
+  height: 1px;
+}
+
+.checked {
+  color: orange;
+  margin: 17px 10px 0px 15px;
+}
+
+.discount-header {
+  display: flex;
+  margin: 10px 0px 20px 0px;
+  flex-wrap: wrap;
+}
+
+.discount-card {
+  border: 1px solid #ccc7c7;
+  border-radius: 4%;
+  margin: 5px 15px;
+  width: 275px;
+  text-align: center;
+  height: 80px;
+}
+
+.discount-card-header {
+  font-size: 1.07rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #686b78;
+}
+
+.discount-info {
+  font-size: 0.86rem;
+  color: #93959f;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: 700;
+  font-family: ProximaNovaCondensedRegular, arial, Helvetica Neue, sans-serif;
+}

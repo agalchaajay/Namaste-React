@@ -1,3 +1,11 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  height: 120px;
+}
 .header-Container {
   display: flex;
   justify-content: space-between;
@@ -52,6 +60,11 @@
   flex-wrap: wrap;
   margin-bottom: 10px;
   min-height: 450px;
+  justify-content: flex-start;
+}
+
+.restaurantcard-main a {
+  display: contents;
 }
 
 .search-btn {
@@ -127,8 +140,22 @@
   font-size: 20px;
 }
 
-.contact-container {
+ul li a {
+  text-decoration: none;
+}
+.restutant-body {
+  background-color: #f8f8f9;
+  margin-top: -20px;
+}
+.restaurant-menu-body {
   min-height: 475px;
+}
+
+.restaurant-menu-container {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 15px;
 }
 
 @media only screen and (max-width: 700px) {
