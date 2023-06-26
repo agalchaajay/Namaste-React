@@ -1,3 +1,18 @@
+.restutant-body {
+  background-color: #f8f8f9;
+  margin-top: -20px;
+}
+.restaurant-menu-body {
+  min-height: 475px;
+}
+
+.restaurant-menu-container {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 15px;
+}
+
 .res-name-rating {
   display: flex;
 }
@@ -79,4 +94,31 @@
   white-space: nowrap;
   font-weight: 700;
   font-family: ProximaNovaCondensedRegular, arial, Helvetica Neue, sans-serif;
+}
+
+.recommeded-item-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recommended-item-image {
+  padding-top: 15px;
+  margin-right: 50px;
+}
+
+.item-logo {
+  width: 150px;
+  height: 120px;
+  margin-right: 50px;
+}
+
+.add-btn {
+  padding: 8px 25px;
+  color: green;
+  background-color: white;
+  border: 1px solid #afb0b1;
+  border-radius: 5%;
+  font-weight: 700;
+  font-size: x-small;
+  margin-left: -160px;
 }
