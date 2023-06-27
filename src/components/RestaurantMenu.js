@@ -3,10 +3,13 @@ import { useParams } from "react-router-dom";
 import Shimmer from "./Shimmer";
 import { CARD_IMAGE_URL } from "../utils/constants";
 import "../styles/RestaurantMenu.css";
-
+import chevrondownsolid from "../assets/chevron-down-solid.svg";
+import chevronupsolid from "../assets/chevron-up-solid.svg";
 const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState(null);
   const { resId } = useParams();
+  const [visibleRecommeded, setVisibleRecommeded] = useState(true);
+  const [visibleSectionTwo, setVisibleSectionTwo] = useState(true);
   useEffect(() => {
     fetchMenu();
   }, []);
@@ -32,7 +35,9 @@ const RestaurantMenu = () => {
             <div className="res-name-rating">
               <div className="text-info">
                 <h1>{resInfo?.cards[0]?.card?.card?.info.name}</h1>
-                <p>{resInfo?.cards[0]?.card?.card?.info?.cuisines}</p>
+                <p>
+                  {(resInfo?.cards[0]?.card?.card?.info?.cuisines).join(", ")}
+                </p>
                 <p>
                   {resInfo?.cards[0]?.card?.card?.info?.areaName} -{" "}
                   {
@@ -82,7 +87,11 @@ const RestaurantMenu = () => {
               <div className="recommended-body">
                 <div className="recommended-head">
                   <h3>
-                    Recommended (
+                    {
+                      resInfo?.cards[resInfo.cards.length - 1]?.groupedCard
+                        ?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.title
+                    }{" "}
+                    (
                     {
                       resInfo?.cards[resInfo.cards.length - 1]?.groupedCard
                         ?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards
@@ -90,35 +99,117 @@ const RestaurantMenu = () => {
                     }
                     )
                   </h3>
+                  <button
+                    className="up-down-btn"
+                    onClick={() => setVisibleRecommeded(!visibleRecommeded)}
+                  >
+                    {visibleRecommeded ? (
+                      <img alt="logo" src={chevronupsolid}></img>
+                    ) : (
+                      <img
+                        className="up-down-btn"
+                        alt="logo"
+                        src={chevrondownsolid}
+                      ></img>
+                    )}
+                  </button>
                 </div>
                 <div className="recommended-container">
                   <div className="recommeded-item">
-                    {(resInfo?.cards[
-                      resInfo.cards.length - 1
-                    ]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards).map(
-                      (item) => (
-                        <>
-                          <div className="recommeded-item-info">
-                            <div className="recommended-item-text">
-                              <h3>{item?.card?.info?.name}</h3>
-                              <p>
-                                {"Rs."}
-                                {item?.card?.info?.price / 100}
-                              </p>
-                              <p>{item?.card?.info?.description}</p>
+                    {visibleRecommeded &&
+                      (resInfo?.cards[
+                        resInfo?.cards?.length - 1
+                      ]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards).map(
+                        (item) => (
+                          <>
+                            <div className="recommeded-item-info">
+                              <div className="recommended-item-text">
+                                <h3>{item?.card?.info?.name}</h3>
+                                <p>
+                                  {"Rs."}
+                                  {item?.card?.info?.price / 100}
+                                </p>
+                                <p>{item?.card?.info?.description}</p>
+                              </div>
+                              <div className="recommended-item-image">
+                                <img
+                                  className="item-logo"
+                                  src={
+                                    CARD_IMAGE_URL + item?.card?.info?.imageId
+                                  }
+                                ></img>
+                                <button className="add-btn">ADD</button>
+                              </div>
                             </div>
-                            <div className="recommended-item-image">
-                              <img
-                                className="item-logo"
-                                src={CARD_IMAGE_URL + item?.card?.info?.imageId}
-                              ></img>
-                              <button className="add-btn">ADD</button>
-                            </div>
-                          </div>
-                          <hr className="dotted-line"></hr>
-                        </>
-                      )
+                            <hr className="dotted-line"></hr>
+                          </>
+                        )
+                      )}
+                  </div>
+                </div>
+              </div>
+              <hr className="dotted-line"></hr>
+              <div className="biryani recommended-body">
+                <div className="recommended-head">
+                  <h3>
+                    {
+                      resInfo?.cards[resInfo.cards.length - 1]?.groupedCard
+                        ?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.title
+                    }{" "}
+                    (
+                    {
+                      resInfo?.cards[resInfo.cards.length - 1]?.groupedCard
+                        ?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards
+                        ?.length
+                    }
+                    )
+                  </h3>
+                  <button
+                    className="up-down-btn"
+                    onClick={() => setVisibleSectionTwo(!visibleSectionTwo)}
+                  >
+                    {visibleSectionTwo ? (
+                      <img alt="logo" src={chevronupsolid}></img>
+                    ) : (
+                      <img
+                        className="up-down-btn"
+                        alt="logo"
+                        src={chevrondownsolid}
+                      ></img>
                     )}
+                  </button>
+                </div>
+                <div className="recommended-container">
+                  <div className="recommeded-item">
+                    {visibleSectionTwo &&
+                      (resInfo?.cards[
+                        resInfo.cards.length - 1
+                      ]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards).map(
+                        (item) => (
+                          <>
+                            <div className="recommeded-item-info">
+                              <div className="recommended-item-text">
+                                <h3>{item?.card?.info?.name}</h3>
+                                <p>
+                                  {"Rs."}
+                                  {item?.card?.info?.price / 100}
+                                </p>
+                                <p>{item?.card?.info?.description}</p>
+                              </div>
+                              <div className="recommended-item-image">
+                                <img
+                                  className="item-logo"
+                                  src={
+                                    CARD_IMAGE_URL + item?.card?.info?.imageId
+                                  }
+                                ></img>
+                                <button className="add-btn">ADD</button>
+                              </div>
+                            </div>
+                            <hr className="dotted-line"></hr>
+                          </>
+                        )
+                      )}
                   </div>
                 </div>
               </div>

@@ -7,7 +7,7 @@
 }
 
 .restaurant-menu-container {
-  width: 60%;
+  width: 65%;
   margin-left: auto;
   margin-right: auto;
   padding-top: 15px;
@@ -121,4 +121,17 @@
   font-weight: 700;
   font-size: x-small;
   margin-left: -160px;
+}
+
+.recommended-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.up-down-btn {
+  width: 50px;
+  height: 35px;
+  border: none;
+  margin-right: 15px;
+  background-color: #f8f8f9;
 }
